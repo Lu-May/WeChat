@@ -13,7 +13,7 @@ struct Sender: Codable {
   var avatar: String
 }
 
-struct Image:Codable {
+struct Image: Codable {
   var url: String
 }
 

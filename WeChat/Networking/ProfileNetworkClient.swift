@@ -1,25 +1,25 @@
 //
-//  NetworkClient.swift
+//  ProfileNetworkClient.swift
 //  WeChat
 //
-//  Created by Yuehuan Lu on 2021/1/25.
+//  Created by Yuehuan Lu on 2021/1/26.
 //
 
 import Foundation
 import Alamofire
 
-struct NetworkClient {
+struct ProfileNetworkClient {
   func request(url: URL, completion: @escaping (Any?, Error?) -> Void) {
     AF.request(url).validate().responseJSON { dataResponse in
       switch dataResponse.result {
       case .success(_):
-        var tweetDatas: [Tweet] = []
+        var profileDatas: Profile?
         do {
-          tweetDatas = try JSONDecoder().decode([Tweet].self, from: dataResponse.data!)
+          profileDatas = try JSONDecoder().decode(Profile.self, from: dataResponse.data!)
         } catch {
           print(error)
         }
-        completion(tweetDatas, nil)
+        completion(profileDatas, nil)
       case let .failure(error):
         completion(nil, error)
       }
