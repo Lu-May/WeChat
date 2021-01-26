@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38920B777AB22B501917EFD9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */; };
+		7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CED825BF00000052C2F3 /* AppDelegate.swift */; };
+		7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */; };
+		7AB2CEDD25BF00000052C2F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDC25BF00000052C2F3 /* ViewController.swift */; };
+		7AB2CEE025BF00000052C2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDE25BF00000052C2F3 /* Main.storyboard */; };
+		7AB2CEE225BF00010052C2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEE125BF00010052C2F3 /* Assets.xcassets */; };
+		7AB2CEE525BF00010052C2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEE325BF00010052C2F3 /* LaunchScreen.storyboard */; };
+		7AB2CEF025BF00010052C2F3 /* WeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */; };
+		7AB2CF1A25BF0CEA0052C2F3 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF1925BF0CEA0052C2F3 /* NetworkClient.swift */; };
+		7AB2CF1E25BF0DE80052C2F3 /* UIImageViewNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */; };
+		7AB2CF2325BF0E140052C2F3 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF2225BF0E140052C2F3 /* Tweet.swift */; };
+		7AB2CF6225BFAB5A0052C2F3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */; };
+		7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */; };
+		7AB2CF6A25BFB7070052C2F3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */; };
+		7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */; };
+		7AB2CF7425BFE7450052C2F3 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF7325BFE7450052C2F3 /* Cell.xib */; };
+		B78CB01219B5B724EAE576B1 /* Pods_WeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA655D3823395A44119AFCCA /* Pods_WeChatTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AB2CEEC25BF00010052C2F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AB2CECD25BF00000052C2F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB2CED425BF00000052C2F3;
+			remoteInfo = WeChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E9FFB05D6BD837F7E88144B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
+		6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.debug.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AB2CED525BF00000052C2F3 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB2CED825BF00000052C2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7AB2CEDC25BF00000052C2F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AB2CEDF25BF00000052C2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AB2CEE125BF00010052C2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AB2CEE425BF00010052C2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7AB2CEE625BF00010052C2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB2CEEB25BF00010052C2F3 /* WeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatTests.swift; sourceTree = "<group>"; };
+		7AB2CEF125BF00010052C2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB2CF1925BF0CEA0052C2F3 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewNetworking.swift; sourceTree = "<group>"; };
+		7AB2CF2225BF0E140052C2F3 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		7AB2CF7325BFE7450052C2F3 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		7DDA5FEFF05A6E9AE8C99FBF /* Pods-WeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.release.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA655D3823395A44119AFCCA /* Pods_WeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54D07F0ACF656D1FDCDE669 /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AB2CED225BF00000052C2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38920B777AB22B501917EFD9 /* Pods_WeChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB2CEE825BF00010052C2F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78CB01219B5B724EAE576B1 /* Pods_WeChatTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02CCCA2DE8D54DD3B5B889FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F54D07F0ACF656D1FDCDE669 /* Pods-WeChat.debug.xcconfig */,
+				5E9FFB05D6BD837F7E88144B /* Pods-WeChat.release.xcconfig */,
+				6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */,
+				7DDA5FEFF05A6E9AE8C99FBF /* Pods-WeChatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7AB2CECC25BF00000052C2F3 = {
+			isa = PBXGroup;
+			children = (
+				7AB2CED725BF00000052C2F3 /* WeChat */,
+				7AB2CEEE25BF00010052C2F3 /* WeChatTests */,
+				7AB2CED625BF00000052C2F3 /* Products */,
+				02CCCA2DE8D54DD3B5B889FD /* Pods */,
+				AA511B5A6E2627BBB503A0CD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7AB2CED625BF00000052C2F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CED525BF00000052C2F3 /* WeChat.app */,
+				7AB2CEEB25BF00010052C2F3 /* WeChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AB2CED725BF00000052C2F3 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CF2825BF0FEE0052C2F3 /* View */,
+				7AB2CF2125BF0E060052C2F3 /* Model */,
+				7AB2CF1825BF0CC30052C2F3 /* Networking */,
+				7AB2CED825BF00000052C2F3 /* AppDelegate.swift */,
+				7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */,
+				7AB2CEDC25BF00000052C2F3 /* ViewController.swift */,
+				7AB2CEDE25BF00000052C2F3 /* Main.storyboard */,
+				7AB2CEE125BF00010052C2F3 /* Assets.xcassets */,
+				7AB2CEE325BF00010052C2F3 /* LaunchScreen.storyboard */,
+				7AB2CEE625BF00010052C2F3 /* Info.plist */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		7AB2CEEE25BF00010052C2F3 /* WeChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */,
+				7AB2CEF125BF00010052C2F3 /* Info.plist */,
+			);
+			path = WeChatTests;
+			sourceTree = "<group>";
+		};
+		7AB2CF1825BF0CC30052C2F3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CF1925BF0CEA0052C2F3 /* NetworkClient.swift */,
+				7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7AB2CF2125BF0E060052C2F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CF2225BF0E140052C2F3 /* Tweet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AB2CF2825BF0FEE0052C2F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */,
+				7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */,
+				7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */,
+				7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */,
+				7AB2CF7325BFE7450052C2F3 /* Cell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA511B5A6E2627BBB503A0CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */,
+				DA655D3823395A44119AFCCA /* Pods_WeChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AB2CED425BF00000052C2F3 /* WeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AB2CEFF25BF00010052C2F3 /* Build configuration list for PBXNativeTarget "WeChat" */;
+			buildPhases = (
+				1145BCF4002273ABD9584DDF /* [CP] Check Pods Manifest.lock */,
+				7AB2CED125BF00000052C2F3 /* Sources */,
+				7AB2CED225BF00000052C2F3 /* Frameworks */,
+				7AB2CED325BF00000052C2F3 /* Resources */,
+				129AC1AB4F57096B229B1F11 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeChat;
+			productName = WeChat;
+			productReference = 7AB2CED525BF00000052C2F3 /* WeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AB2CEEA25BF00010052C2F3 /* WeChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AB2CF0225BF00010052C2F3 /* Build configuration list for PBXNativeTarget "WeChatTests" */;
+			buildPhases = (
+				F18C38B964150D145156E0C8 /* [CP] Check Pods Manifest.lock */,
+				7AB2CEE725BF00010052C2F3 /* Sources */,
+				7AB2CEE825BF00010052C2F3 /* Frameworks */,
+				7AB2CEE925BF00010052C2F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AB2CEED25BF00010052C2F3 /* PBXTargetDependency */,
+			);
+			name = WeChatTests;
+			productName = WeChatTests;
+			productReference = 7AB2CEEB25BF00010052C2F3 /* WeChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AB2CECD25BF00000052C2F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					7AB2CED425BF00000052C2F3 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					7AB2CEEA25BF00010052C2F3 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 7AB2CED425BF00000052C2F3;
+					};
+				};
+			};
+			buildConfigurationList = 7AB2CED025BF00000052C2F3 /* Build configuration list for PBXProject "WeChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AB2CECC25BF00000052C2F3;
+			productRefGroup = 7AB2CED625BF00000052C2F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AB2CED425BF00000052C2F3 /* WeChat */,
+				7AB2CEEA25BF00010052C2F3 /* WeChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AB2CED325BF00000052C2F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB2CEE525BF00010052C2F3 /* LaunchScreen.storyboard in Resources */,
+				7AB2CF7425BFE7450052C2F3 /* Cell.xib in Resources */,
+				7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */,
+				7AB2CEE225BF00010052C2F3 /* Assets.xcassets in Resources */,
+				7AB2CEE025BF00000052C2F3 /* Main.storyboard in Resources */,
+				7AB2CF6A25BFB7070052C2F3 /* CollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB2CEE925BF00010052C2F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1145BCF4002273ABD9584DDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		129AC1AB4F57096B229B1F11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F18C38B964150D145156E0C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AB2CED125BF00000052C2F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB2CEDD25BF00000052C2F3 /* ViewController.swift in Sources */,
+				7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */,
+				7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */,
+				7AB2CF1E25BF0DE80052C2F3 /* UIImageViewNetworking.swift in Sources */,
+				7AB2CF2325BF0E140052C2F3 /* Tweet.swift in Sources */,
+				7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */,
+				7AB2CF6225BFAB5A0052C2F3 /* TableViewCell.swift in Sources */,
+				7AB2CF1A25BF0CEA0052C2F3 /* NetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB2CEE725BF00010052C2F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB2CEF025BF00010052C2F3 /* WeChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AB2CEED25BF00010052C2F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AB2CED425BF00000052C2F3 /* WeChat */;
+			targetProxy = 7AB2CEEC25BF00010052C2F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AB2CEDE25BF00000052C2F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AB2CEDF25BF00000052C2F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7AB2CEE325BF00010052C2F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AB2CEE425BF00010052C2F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AB2CEFD25BF00010052C2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7AB2CEFE25BF00010052C2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AB2CF0025BF00010052C2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F54D07F0ACF656D1FDCDE669 /* Pods-WeChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lu.WeChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7AB2CF0125BF00010052C2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9FFB05D6BD837F7E88144B /* Pods-WeChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lu.WeChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7AB2CF0325BF00010052C2F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lu.WeChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeChat.app/WeChat";
+			};
+			name = Debug;
+		};
+		7AB2CF0425BF00010052C2F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DDA5FEFF05A6E9AE8C99FBF /* Pods-WeChatTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lu.WeChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeChat.app/WeChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AB2CED025BF00000052C2F3 /* Build configuration list for PBXProject "WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB2CEFD25BF00010052C2F3 /* Debug */,
+				7AB2CEFE25BF00010052C2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AB2CEFF25BF00010052C2F3 /* Build configuration list for PBXNativeTarget "WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB2CF0025BF00010052C2F3 /* Debug */,
+				7AB2CF0125BF00010052C2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AB2CF0225BF00010052C2F3 /* Build configuration list for PBXNativeTarget "WeChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB2CF0325BF00010052C2F3 /* Debug */,
+				7AB2CF0425BF00010052C2F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AB2CECD25BF00000052C2F3 /* Project object */;
+}
