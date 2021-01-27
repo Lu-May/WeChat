@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.title = "朋友圈"
     
+    self.tableView?.automaticallyAdjustsScrollIndicatorInsets = false
+    
     tweetNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/moments.json")!){ json, _ in
       self.tweetDatas = json as? [Tweet]
       self.tweetDatas = self.tweetDatas?.filter( { $0.images != nil || $0.content != nil } )
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
       header.heightAnchor.constraint(equalToConstant: 322),
       header.widthAnchor.constraint(equalToConstant: 414)
     ])
+//    self.automaticallyAdjustsScrollViewInsets = false
     
     profileNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/user/jsmith.json")!) { json, _ in
       self.profile = json as? Profile
@@ -51,6 +54,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tweetDatas?.count ?? 0
   }
+//
+//  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//    return 0.01
+//  }
+//
+//  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//    return 0.01
+//  }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else {

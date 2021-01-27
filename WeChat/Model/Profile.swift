@@ -8,13 +8,13 @@
 import Foundation
 
 struct Profile: Codable {
-  var profile_image: String
+  var profileImage: String
   var avatar: String
   var nick: String
   var username: String
   
   enum CodingKeys: String, CodingKey {
-    case profile_image = "profile-image"
+    case profileImage = "profile-image"
     case avatar
     case nick
     case username

@@ -16,7 +16,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
   
   var tweet: Tweet?
   
-  private lazy var heightZero = collectionView.heightAnchor.constraint(equalToConstant: 0)
+  private lazy var collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
   
   func configure(with tweet: Tweet) {
     self.tweet = tweet
@@ -28,10 +28,10 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     if tweet.images == nil || tweet.images?.count == 0 {
-      heightZero.constant = 0
+      collectionViewHeightConstraint.constant = 0
     } else {
       
-      heightZero.constant = 100
+      collectionViewHeightConstraint.constant = 100
     }
     collectionView.reloadData()
   }
@@ -44,7 +44,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-    heightZero.isActive = true
+    collectionViewHeightConstraint.isActive = true
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,13 +64,14 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
   override func prepareForReuse() {
     super.prepareForReuse()
     
-    avatarImage.af_cancelImageRequest()
+    avatarImage.af.cancelImageRequest()
     avatarImage.image = nil
   }
 }
 
 extension TableViewCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    indexPath.
     return CGSize(width: 100, height: 100)
   }
 }

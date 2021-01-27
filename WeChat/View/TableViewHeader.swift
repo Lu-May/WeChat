@@ -17,7 +17,7 @@ class TableViewHeader: UITableViewHeaderFooterView {
   }
   
   func configure(with profile: Profile) {
-    let profile_imageURL = URL(string: profile.profile_image)
+    let profile_imageURL = URL(string: profile.profileImage)
     guard let url = profile_imageURL else {
       return
     }
