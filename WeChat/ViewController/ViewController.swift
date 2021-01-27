@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-  @IBOutlet weak var tableView: UITableView?
+  @IBOutlet weak var tableView: UITableView!
 
   var tweetDatas: [Tweet]?
   var profile: Profile?
@@ -19,22 +19,28 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "朋友圈"
-    
-//    self.tableView?.automaticallyAdjustsScrollIndicatorInsets = false
-    self.tableView?.contentInset = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0);
-    
+        
     tweetNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/moments.json")!){ json, _ in
       self.tweetDatas = json as? [Tweet]
       self.tweetDatas = self.tweetDatas?.filter( { $0.images != nil || $0.content != nil } )
       self.tableView?.reloadData()
     }
     
+    let view = UIView()
+    
     let header = Bundle.main.loadNibNamed("TableViewHeader", owner: nil, options: nil)?.first as! TableViewHeader
+    view.addSubview(header)
+    
     header.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
+      header.widthAnchor.constraint(equalToConstant: tableView.bounds.width),
       header.heightAnchor.constraint(equalToConstant: 322),
-      header.widthAnchor.constraint(equalToConstant: 414)
+      header.topAnchor.constraint(equalTo: view.topAnchor),
+      header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      header.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+    view.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 322)
     
     profileNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/user/jsmith.json")!) { json, _ in
       self.profile = json as? Profile
@@ -42,7 +48,7 @@ class ViewController: UIViewController {
       self.tableView?.reloadData()
     }
     
-    tableView?.tableHeaderView = header
+    tableView?.tableHeaderView = view
     tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     tableView?.dataSource = self
     tableView?.delegate = self

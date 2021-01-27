@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableViewCell" customModule="WeChat" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="401" height="333"/>
+            <rect key="frame" x="0.0" y="0.0" width="401" height="352"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sde-5e-UDP">
@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sxR-jq-NMc">
-                    <rect key="frame" x="72" y="71" width="309" height="252"/>
+                    <rect key="frame" x="72" y="71" width="309" height="261"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="309" id="xnd-7s-atO"/>
@@ -46,35 +46,46 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYP-m8-6S9">
+                    <rect key="frame" x="82" y="342" width="309" height="0.0"/>
+                    <color key="backgroundColor" white="0.94576733732876717" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="sde-5e-UDP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4se-DK-jHD"/>
                 <constraint firstItem="AHF-Xq-Pbk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="5eu-EH-c08"/>
-                <constraint firstItem="sxR-jq-NMc" firstAttribute="top" secondItem="xhe-nF-Nyt" secondAttribute="bottom" constant="10" id="5v0-V6-jSV"/>
+                <constraint firstAttribute="trailing" secondItem="kYP-m8-6S9" secondAttribute="trailing" constant="10" id="7Dj-WL-s4h"/>
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="top" secondItem="AHF-Xq-Pbk" secondAttribute="bottom" constant="10" id="7bc-Kd-qbm"/>
                 <constraint firstItem="sxR-jq-NMc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="72" id="EJI-I6-OD3"/>
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="leading" secondItem="sde-5e-UDP" secondAttribute="trailing" constant="22" id="NMz-b9-aia"/>
+                <constraint firstItem="kYP-m8-6S9" firstAttribute="top" secondItem="sxR-jq-NMc" secondAttribute="bottom" constant="10" id="PnR-LE-zx2"/>
                 <constraint firstItem="AHF-Xq-Pbk" firstAttribute="leading" secondItem="sde-5e-UDP" secondAttribute="trailing" constant="22" id="RCR-ap-bIy"/>
                 <constraint firstItem="sde-5e-UDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="TAW-ce-Sb5"/>
+                <constraint firstItem="kYP-m8-6S9" firstAttribute="top" secondItem="sxR-jq-NMc" secondAttribute="bottom" constant="10" id="U1W-5f-tIm"/>
                 <constraint firstItem="sde-5e-UDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="VJA-fI-tJP"/>
                 <constraint firstItem="AHF-Xq-Pbk" firstAttribute="leading" secondItem="sde-5e-UDP" secondAttribute="trailing" constant="22" id="X4x-h2-NZ6"/>
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="top" secondItem="AHF-Xq-Pbk" secondAttribute="bottom" constant="10" id="Zbn-wL-JqJ"/>
+                <constraint firstItem="kYP-m8-6S9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="82" id="aTn-dz-lES"/>
                 <constraint firstAttribute="trailing" secondItem="AHF-Xq-Pbk" secondAttribute="trailing" constant="30" id="bvO-xf-IbH"/>
                 <constraint firstItem="sxR-jq-NMc" firstAttribute="top" secondItem="xhe-nF-Nyt" secondAttribute="bottom" constant="10" id="hz6-BE-aA0"/>
+                <constraint firstAttribute="bottom" secondItem="kYP-m8-6S9" secondAttribute="bottom" constant="10" id="prm-9p-za1"/>
                 <constraint firstAttribute="trailing" secondItem="xhe-nF-Nyt" secondAttribute="trailing" constant="30" id="s6v-Ci-fIi"/>
-                <constraint firstAttribute="bottom" secondItem="sxR-jq-NMc" secondAttribute="bottom" constant="10" id="sRA-3i-9hV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sxR-jq-NMc" secondAttribute="trailing" constant="20" id="wcB-aM-PQt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="avatarImage" destination="sde-5e-UDP" id="bQy-3Q-FdI"/>
                 <outlet property="collectionView" destination="sxR-jq-NMc" id="UEr-r3-mze"/>
+                <outlet property="commentsLable" destination="kYP-m8-6S9" id="DYP-LI-80t"/>
                 <outlet property="contentLable" destination="xhe-nF-Nyt" id="7Vs-4b-Xuc"/>
                 <outlet property="usernameLable" destination="AHF-Xq-Pbk" id="GAa-Uw-jt0"/>
             </connections>
-            <point key="canvasLocation" x="-109.42028985507247" y="73.995535714285708"/>
+            <point key="canvasLocation" x="-109.42028985507247" y="79.6875"/>
         </view>
     </objects>
     <resources>

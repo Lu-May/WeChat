@@ -17,8 +17,14 @@ struct Image: Codable {
   var url: String
 }
 
+struct Comment: Codable {
+  var content: String?
+  var sender: Sender?
+}
+
 struct Tweet: Codable {
   var content: String?
   var sender: Sender?
   var images: [Image]?
+  var comments: [Comment]?
 }
