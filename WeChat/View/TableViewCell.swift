@@ -17,6 +17,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
   var tweet: Tweet?
   
   private lazy var collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
+  private lazy var collectionViewWidthConstraint = collectionView.widthAnchor.constraint(equalToConstant: 0)
   
   func configure(with tweet: Tweet) {
     self.tweet = tweet
@@ -29,9 +30,24 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     
     if tweet.images == nil || tweet.images?.count == 0 {
       collectionViewHeightConstraint.constant = 0
+      collectionViewWidthConstraint.constant = 0
     } else {
-      
-      collectionViewHeightConstraint.constant = 100
+      if tweet.images!.count == 1 {
+        collectionViewHeightConstraint.constant = 150
+        collectionViewWidthConstraint.constant = 310
+      } else if tweet.images!.count <= 3 {
+        collectionViewHeightConstraint.constant = 100
+        collectionViewWidthConstraint.constant = 310
+      } else if tweet.images!.count == 4 {
+        collectionViewHeightConstraint.constant = 200
+        collectionViewWidthConstraint.constant = 206
+      } else if tweet.images!.count <= 6 {
+        collectionViewHeightConstraint.constant = 200
+        collectionViewWidthConstraint.constant = 310
+      } else {
+        collectionViewHeightConstraint.constant = 300
+        collectionViewWidthConstraint.constant = 310
+      }
     }
     collectionView.reloadData()
   }
@@ -41,10 +57,11 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     
     self.collectionView.delegate =  self
     self.collectionView.dataSource =  self
-    collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionViewHeightConstraint.isActive = true
+    collectionViewWidthConstraint.isActive = true
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,7 +88,12 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
 
 extension TableViewCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    indexPath.
-    return CGSize(width: 100, height: 100)
+    if (tweet?.images!.count)! == 1 || (tweet?.images!.count)! == 4 {
+      return CGSize(width: self.collectionView.bounds.size.width / 2 - 10, height: self.collectionView.bounds.size.width / 2 - 10)
+    }
+    if (tweet?.images!.count)! <= 3 {
+      return CGSize(width: self.collectionView.bounds.size.width / 3 - 10, height: self.collectionView.bounds.size.width / 3 - 10)
+    }
+    return CGSize(width: self.collectionView.bounds.size.width / 3 - 10, height: self.collectionView.bounds.size.width / 3 - 10)
   }
 }

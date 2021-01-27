@@ -15,16 +15,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-aF-QFF">
-                    <rect key="frame" x="10" y="10" width="274" height="237"/>
+                    <rect key="frame" x="0.0" y="0.0" width="294" height="257"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="WxF-aF-QFF" secondAttribute="trailing" constant="10" id="CjB-oy-den"/>
-                <constraint firstItem="WxF-aF-QFF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="KuN-pu-ElS"/>
-                <constraint firstAttribute="bottom" secondItem="WxF-aF-QFF" secondAttribute="bottom" constant="10" id="q8o-Rq-v5h"/>
-                <constraint firstItem="WxF-aF-QFF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tlZ-D8-mJu"/>
+                <constraint firstAttribute="trailing" secondItem="WxF-aF-QFF" secondAttribute="trailing" id="CjB-oy-den"/>
+                <constraint firstItem="WxF-aF-QFF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KuN-pu-ElS"/>
+                <constraint firstAttribute="bottom" secondItem="WxF-aF-QFF" secondAttribute="bottom" id="q8o-Rq-v5h"/>
+                <constraint firstItem="WxF-aF-QFF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tlZ-D8-mJu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

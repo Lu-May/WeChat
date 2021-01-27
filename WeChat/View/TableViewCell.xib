@@ -27,22 +27,25 @@
                     <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sxR-jq-NMc">
-                    <rect key="frame" x="65" y="71" width="306" height="252"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2E1-If-UUu">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-nF-Nyt">
                     <rect key="frame" x="82" y="40.5" width="289" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sxR-jq-NMc">
+                    <rect key="frame" x="72" y="71" width="309" height="252"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="309" id="xnd-7s-atO"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2E1-If-UUu">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,7 +54,7 @@
                 <constraint firstItem="AHF-Xq-Pbk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="5eu-EH-c08"/>
                 <constraint firstItem="sxR-jq-NMc" firstAttribute="top" secondItem="xhe-nF-Nyt" secondAttribute="bottom" constant="10" id="5v0-V6-jSV"/>
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="top" secondItem="AHF-Xq-Pbk" secondAttribute="bottom" constant="10" id="7bc-Kd-qbm"/>
-                <constraint firstItem="sxR-jq-NMc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="65" id="M9n-Iv-0bc"/>
+                <constraint firstItem="sxR-jq-NMc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="72" id="EJI-I6-OD3"/>
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="leading" secondItem="sde-5e-UDP" secondAttribute="trailing" constant="22" id="NMz-b9-aia"/>
                 <constraint firstItem="AHF-Xq-Pbk" firstAttribute="leading" secondItem="sde-5e-UDP" secondAttribute="trailing" constant="22" id="RCR-ap-bIy"/>
                 <constraint firstItem="sde-5e-UDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="TAW-ce-Sb5"/>
@@ -60,9 +63,9 @@
                 <constraint firstItem="xhe-nF-Nyt" firstAttribute="top" secondItem="AHF-Xq-Pbk" secondAttribute="bottom" constant="10" id="Zbn-wL-JqJ"/>
                 <constraint firstAttribute="trailing" secondItem="AHF-Xq-Pbk" secondAttribute="trailing" constant="30" id="bvO-xf-IbH"/>
                 <constraint firstItem="sxR-jq-NMc" firstAttribute="top" secondItem="xhe-nF-Nyt" secondAttribute="bottom" constant="10" id="hz6-BE-aA0"/>
-                <constraint firstAttribute="trailing" secondItem="sxR-jq-NMc" secondAttribute="trailing" constant="30" id="nDd-5w-VJP"/>
                 <constraint firstAttribute="trailing" secondItem="xhe-nF-Nyt" secondAttribute="trailing" constant="30" id="s6v-Ci-fIi"/>
                 <constraint firstAttribute="bottom" secondItem="sxR-jq-NMc" secondAttribute="bottom" constant="10" id="sRA-3i-9hV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sxR-jq-NMc" secondAttribute="trailing" constant="20" id="wcB-aM-PQt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
