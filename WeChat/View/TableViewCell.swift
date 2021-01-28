@@ -81,7 +81,7 @@ class TableViewCell: UITableViewCell {
         commentsCount = commentsCount! - 1
         if commentsCount == 0 {
           let myString = comment.sender?.nick ?? ""
-          let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.blue ]
+          let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor(red: 2/225, green: 29/225, blue: 140/225, alpha: 1) ]
           let myAttrString = NSMutableAttributedString(string: myString, attributes: myAttribute)
 
           let attrString = NSAttributedString(string: ": \(comment.content ?? "")")
@@ -91,7 +91,7 @@ class TableViewCell: UITableViewCell {
           
         } else {
           let myString = comment.sender?.nick ?? ""
-          let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.blue ]
+          let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor(red: 2/225, green: 29/225, blue: 140/225, alpha: 1) ]
           let myAttrString = NSMutableAttributedString(string: myString, attributes: myAttribute)
 
           let attrString = NSAttributedString(string: ": \(comment.content ?? "")\n")
