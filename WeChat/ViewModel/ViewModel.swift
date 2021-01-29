@@ -10,6 +10,7 @@ import Foundation
 class ViewModel {
   var tweetDatas: [Tweet]?
   var tableViewDatas = [Tweet]()
+  var originalDatas: [Tweet]?
   var profile: Profile?
 
   private let tweetNetworkClient: TweetNetworkClient = .init()
@@ -19,6 +20,7 @@ class ViewModel {
     tweetNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/moments.json")!){ json, _ in
       self.tweetDatas = json as? [Tweet]
       self.tweetDatas = self.tweetDatas?.filter( { $0.images != nil || $0.content != nil } )
+      self.originalDatas = self.tweetDatas
       self.getTableViewDataSource()
       completion()
     }
@@ -32,7 +34,7 @@ class ViewModel {
   }
   
   func initDatas() {
-    self.tweetDatas = tableViewDatas
+    self.tweetDatas = originalDatas
     tableViewDatas = []
   }
   
