@@ -12,22 +12,19 @@ class ViewController: UIViewController {
 
   private let refreshControl = UIRefreshControl()
   let viewModel = ViewModel()
-  
-  @objc private func refreshTableViewData(_ sender: Any) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-      self.viewModel.initDatas()
-      self.viewModel.getTableViewDataSource()
-      self.tableView.reloadData()
-      self.refreshControl.endRefreshing()
-    }
-  }
+  let indicator = UIActivityIndicatorView()
+  let tableFooterView = UITableViewHeaderFooterView()
+  let lable = UILabel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "朋友圈"
-        
-    tableView.refreshControl = refreshControl
+    setIndicatorConstraint()
+    tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
+
+    setFooterLable()
     
+    tableView.refreshControl = refreshControl
     refreshControl.addTarget(self, action: #selector(refreshTableViewData(_:)), for: .valueChanged)
     
     viewModel.getTweetDatas() { [weak self] in
@@ -35,19 +32,11 @@ class ViewController: UIViewController {
     }
 
     let view = UIView()
-    
     let header = Bundle.main.loadNibNamed("TableViewHeader", owner: nil, options: nil)?.first as! TableViewHeader
     view.addSubview(header)
     
-    header.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      header.widthAnchor.constraint(equalToConstant: tableView.bounds.width),
-      header.heightAnchor.constraint(equalToConstant: 322),
-      header.topAnchor.constraint(equalTo: view.topAnchor),
-      header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      header.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    ])
+    setTableViewHeaderConstraint(header, view)
+    
     view.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 322)
     
     viewModel.getProfiles() { [ weak self ] in
@@ -57,11 +46,61 @@ class ViewController: UIViewController {
       }
     }
     
+    tableView?.tableFooterView = tableFooterView
     tableView?.tableHeaderView = view
     tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     tableView?.dataSource = self
     tableView?.delegate = self
     tableView?.estimatedRowHeight = UITableView.automaticDimension
+  }
+  
+  @objc private func refreshTableViewData(_ sender: Any) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+      self.viewModel.initDatas()
+      self.viewModel.getTableViewDataSource()
+      self.tableView.reloadData()
+      self.lable.text = "上拉加载数据"
+      self.setIndicatorConstraint()
+
+      self.refreshControl.endRefreshing()
+    }
+  }
+  
+  fileprivate func setTableViewHeaderConstraint(_ header: TableViewHeader, _ view: UIView) {
+    header.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      header.topAnchor.constraint(equalTo: view.topAnchor),
+      header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      header.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    ])
+  }
+  
+  fileprivate func setIndicatorConstraint() {
+    tableFooterView.addSubview(indicator)
+    indicator.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      indicator.topAnchor.constraint(equalTo: tableFooterView.topAnchor),
+      indicator.trailingAnchor.constraint(equalTo: tableFooterView.trailingAnchor),
+      indicator.leadingAnchor.constraint(equalTo: tableFooterView.leadingAnchor),
+      indicator.bottomAnchor.constraint(equalTo: tableFooterView.bottomAnchor)
+    ])
+    indicator.center = tableFooterView.center
+  }
+  
+  fileprivate func setFooterLable() {
+    lable.font = lable.font.withSize(12)
+    lable.textColor = UIColor.lightGray
+    lable.text = "上拉加载数据"
+    lable.textAlignment = .center
+    self.tableFooterView.addSubview(lable)
+    lable.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      lable.topAnchor.constraint(equalTo: self.tableFooterView.topAnchor),
+      lable.trailingAnchor.constraint(equalTo: self.tableFooterView.trailingAnchor),
+      lable.leadingAnchor.constraint(equalTo: self.tableFooterView.leadingAnchor),
+      lable.bottomAnchor.constraint(equalTo: self.tableFooterView.bottomAnchor)
+    ])
   }
 }
 
@@ -83,10 +122,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     let maximumOffset = tableView.contentSize.height - tableView.frame.size.height
     
     if maximumOffset - currentOffset <= 10.0 {
+      self.indicator.startAnimating()
+
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-        print("reload")
+        self.indicator.hidesWhenStopped = true
+        if self.viewModel.tweetDatas?.count == 0 {
+          self.lable.text = "数据加载完毕"
+          self.indicator.removeFromSuperview()
+        }
         self.viewModel.getTableViewDataSource()
         self.tableView.reloadData()
+        self.indicator.stopAnimating()
       }
     }
   }

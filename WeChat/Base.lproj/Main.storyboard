@@ -36,13 +36,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-Zu-ngy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-Zu-ngy">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cpi-8O-2pB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zPc-Zu-ngy" firstAttribute="leading" secondItem="Rp1-IX-o2X" secondAttribute="leading" id="FWL-Qe-Qh8"/>
+                            <constraint firstAttribute="trailing" secondItem="zPc-Zu-ngy" secondAttribute="trailing" id="YLC-AV-NSf"/>
+                            <constraint firstItem="zPc-Zu-ngy" firstAttribute="top" secondItem="cpi-8O-2pB" secondAttribute="top" id="a6d-z0-PkH"/>
+                            <constraint firstAttribute="bottom" secondItem="zPc-Zu-ngy" secondAttribute="bottom" id="faH-yU-HOT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hMX-QS-LEx"/>
                     <connections>

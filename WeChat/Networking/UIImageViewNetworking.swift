@@ -10,6 +10,6 @@ import AlamofireImage
 
 extension UIImageView {
   func setImage(withURL url: URL) {
-    self.af_setImage(withURL: url)
+    self.af.setImage(withURL: url)
   }
 }
