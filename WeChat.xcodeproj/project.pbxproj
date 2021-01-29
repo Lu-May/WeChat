@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		38920B777AB22B501917EFD9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */; };
+		7A3E103525C3FD0E00149B17 /* ImageNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */; };
+		7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103A25C4035200149B17 /* ImageCache.swift */; };
 		7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A820C6625C24D4A002215D1 /* ViewModel.swift */; };
 		7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CED825BF00000052C2F3 /* AppDelegate.swift */; };
 		7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */; };
@@ -23,7 +25,6 @@
 		7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */; };
 		7AB2CF6A25BFB7070052C2F3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */; };
 		7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */; };
-		7AB2CF7425BFE7450052C2F3 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF7325BFE7450052C2F3 /* Cell.xib */; };
 		7AB2CF8725BFFCA70052C2F3 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */; };
 		7AB2CF8B25BFFE6F0052C2F3 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */; };
 		7AB2CF9125C0006A0052C2F3 /* ProfileNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		5E9FFB05D6BD837F7E88144B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 		6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.debug.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkClient.swift; sourceTree = "<group>"; };
+		7A3E103A25C4035200149B17 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		7A820C6625C24D4A002215D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7AB2CED525BF00000052C2F3 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB2CED825BF00000052C2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		7AB2CF7325BFE7450052C2F3 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
 		7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
 		7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkClient.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7A820C6625C24D4A002215D1 /* ViewModel.swift */,
+				7A3E103A25C4035200149B17 /* ImageCache.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			children = (
 				7AB2CF1925BF0CEA0052C2F3 /* TweetNetworkClient.swift */,
 				7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */,
+				7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */,
 				7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */,
 			);
 			path = Networking;
@@ -183,10 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */,
-				7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */,
 				7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */,
+				7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */,
 				7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */,
-				7AB2CF7325BFE7450052C2F3 /* Cell.xib */,
 				7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */,
 				7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */,
 			);
@@ -294,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB2CEE525BF00010052C2F3 /* LaunchScreen.storyboard in Resources */,
-				7AB2CF7425BFE7450052C2F3 /* Cell.xib in Resources */,
 				7AB2CF8725BFFCA70052C2F3 /* TableViewHeader.xib in Resources */,
 				7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */,
 				7AB2CEE225BF00010052C2F3 /* Assets.xcassets in Resources */,
@@ -383,6 +385,7 @@
 			files = (
 				7AB2CF8B25BFFE6F0052C2F3 /* TableViewHeader.swift in Sources */,
 				7AB2CF9125C0006A0052C2F3 /* ProfileNetworkClient.swift in Sources */,
+				7A3E103525C3FD0E00149B17 /* ImageNetworkClient.swift in Sources */,
 				7AB2CEDD25BF00000052C2F3 /* ViewController.swift in Sources */,
 				7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */,
 				7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */,
@@ -392,6 +395,7 @@
 				7AB2CF9525C0008E0052C2F3 /* Profile.swift in Sources */,
 				7AB2CF6225BFAB5A0052C2F3 /* TableViewCell.swift in Sources */,
 				7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */,
+				7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */,
 				7AB2CF1A25BF0CEA0052C2F3 /* TweetNetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

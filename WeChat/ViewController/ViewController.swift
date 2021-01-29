@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
-
+  
   private let refreshControl = UIRefreshControl()
   let viewModel = ViewModel()
   let indicator = UIActivityIndicatorView()
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     self.title = "朋友圈"
     setIndicatorConstraint()
     tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
-
+    
     setFooterLable()
     
     tableView.refreshControl = refreshControl
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     viewModel.getTweetDatas() { [weak self] in
       self?.tableView.reloadData()
     }
-
+    
     let view = UIView()
     let header = Bundle.main.loadNibNamed("TableViewHeader", owner: nil, options: nil)?.first as! TableViewHeader
     view.addSubview(header)
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
       self.tableView.reloadData()
       self.lable.text = "上拉加载数据"
       self.setIndicatorConstraint()
-
+      
       self.refreshControl.endRefreshing()
     }
   }
@@ -123,7 +123,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     if maximumOffset - currentOffset <= 10.0 {
       self.indicator.startAnimating()
-
+      
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
         self.indicator.hidesWhenStopped = true
         if self.viewModel.tweetDatas?.count == 0 {

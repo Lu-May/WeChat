@@ -10,23 +10,20 @@ import AlamofireImage
 
 class CollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var image:UIImageView!
+  let imageCache = ImageCache()
   
   override func awakeFromNib() {
     super.awakeFromNib()
   }
   
   func configure(with img: String) {
-    let Imgurl = URL(string: img)
-    guard let url = Imgurl else {
-      return
+    ImageCache.shared.getImageFromCache(img) { [weak self] img, _ in
+      self?.image.image = img
     }
-    image.setImage(withURL: url)
   }
-
+  
   override func prepareForReuse() {
-     super.prepareForReuse()
-
-     image.af.cancelImageRequest()
-     image.image = nil
+    super.prepareForReuse()
+    image.image = nil
   }
 }

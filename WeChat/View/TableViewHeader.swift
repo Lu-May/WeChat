@@ -12,22 +12,20 @@ class TableViewHeader: UITableViewHeaderFooterView {
   @IBOutlet weak var avatar: UIImageView?
   @IBOutlet weak var nick: UILabel?
   
+  let imageCache = ImageCache()
   override class func awakeFromNib() {
     super.awakeFromNib()
   }
   
   func configure(with profile: Profile) {
-    let profile_imageURL = URL(string: profile.profileImage)
-    guard let url = profile_imageURL else {
-      return
-    }
-    profile_image?.setImage(withURL: url)
     
-    let avatarURL = URL(string: profile.avatar)
-    guard let avatarUrl = avatarURL else {
-      return
+    ImageCache.shared.getImageFromCache(profile.profileImage) { [weak self] image, _ in
+      self?.profile_image?.image = image
     }
-    avatar?.setImage(withURL: avatarUrl)
+    
+    ImageCache.shared.getImageFromCache(profile.avatar) { [weak self] image, _ in
+      self?.avatar?.image = image
+    }
     nick?.font = UIFont(name: "Helvetica-Bold", size: 18)
     nick?.text = profile.nick
   }

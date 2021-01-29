@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewModel {
   var tweetDatas: [Tweet]?
   var tableViewDatas = [Tweet]()
   var originalDatas: [Tweet]?
   var profile: Profile?
-
+  
   private let tweetNetworkClient: TweetNetworkClient = .init()
   private let profileNetworkClient: ProfileNetworkClient = .init()
   
