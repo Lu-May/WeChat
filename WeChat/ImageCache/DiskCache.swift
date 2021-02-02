@@ -16,20 +16,20 @@ class DiskCache {
   
   lazy var documentPath = documentsURL.path
   
-  func getPath(url: String) -> String {
+  private func getPath(url: String) -> String {
     let array = url.split(separator: "/")
     let pathString = array[array.count - 2] + array[array.count - 1]
     return String(pathString)
   }
   
-  func saveImageDocumentDirectory(_ url: String, data: UIImage){
+  func saveImage(url: String, image: UIImage){
     
     let pathString = getPath(url: url)
     let filePath = documentsURL.appendingPathComponent("\(pathString)")
     
     do {
       try self.fileManager.createDirectory(atPath: String(documentPath), withIntermediateDirectories: true, attributes: nil)
-      if let pngImageData = data.pngData() {
+      if let pngImageData = image.pngData() {
         try pngImageData.write(to: filePath, options: .atomic)
       }
     } catch {
@@ -37,7 +37,7 @@ class DiskCache {
     }
   }
   
-  func searchImageInDiskCache(_ url: String) -> UIImage? {
+  func getImage(url: String) -> UIImage? {
     let pathString = getPath(url: url)
     let filePath = documentsURL.appendingPathComponent("\(pathString)")
     

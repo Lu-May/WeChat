@@ -9,14 +9,16 @@ import Foundation
 import Alamofire
 
 struct ImageNetworkClient {
-  func request(url: URL, completion: @escaping (UIImage?) -> Void) {
+  func request(url: URL, completion: @escaping (UIImage) -> Void) {
     AF.request(url).validate().responseData { dataResponse in
       switch dataResponse.result {
-      case .success(_):
-        var imageData: UIImage?
-        imageData = UIImage(data: dataResponse.data!)
-        completion(imageData)
-      case .failure(_): break
+      case let .success(data):
+        if let imageData = UIImage(data: data) {
+          completion(imageData)
+        }
+      case let .failure(error):
+        print(error)
+        break
       }
     }
   }
