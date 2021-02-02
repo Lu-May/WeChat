@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class TableViewCell: UITableViewCell {
+class TweetCell: UITableViewCell {
   @IBOutlet weak var avatarImage: UIImageView!
   @IBOutlet weak var usernameLable: UILabel!
   @IBOutlet weak var contentLable: UILabel!
@@ -17,8 +17,8 @@ class TableViewCell: UITableViewCell {
   
   var tweet: Tweet?
   
-  private lazy var collectionViewHeightConstraint = collectionView?.heightAnchor.constraint(equalToConstant: 0)
-  private lazy var collectionViewWidthConstraint = collectionView?.widthAnchor.constraint(equalToConstant: 309)
+  private lazy var collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
+  private lazy var collectionViewWidthConstraint = collectionView.widthAnchor.constraint(equalToConstant: 309)
   var myString = ""
   
   func configure(with tweet: Tweet) {
@@ -34,42 +34,42 @@ class TableViewCell: UITableViewCell {
     setCommentsLableText(tweet)
     setCollectionViewHeightAndWidthConstraint(tweet)
     
-    collectionView?.reloadData()
+    collectionView.reloadData()
   }
   
   override func awakeFromNib() {
     super.awakeFromNib()
     avatarImage.image = nil
     
-    self.collectionView?.delegate =  self
-    self.collectionView?.dataSource =  self
-    collectionView?.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-    self.collectionView?.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
-    collectionView?.translatesAutoresizingMaskIntoConstraints = false
-    collectionViewHeightConstraint?.isActive = true
-    collectionViewWidthConstraint?.isActive = true
+    self.collectionView.delegate =  self
+    self.collectionView.dataSource =  self
+    collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+    self.collectionView.register(UINib(nibName: "TweetImageCell", bundle: nil), forCellWithReuseIdentifier: "TweetImageCell")
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionViewHeightConstraint.isActive = true
+    collectionViewWidthConstraint.isActive = true
   }
   
   fileprivate func setCollectionViewHeightAndWidthConstraint(_ tweet: Tweet) {
     if tweet.images == nil || tweet.images?.count == 0 {
-      collectionViewHeightConstraint?.constant = 0
-      collectionViewWidthConstraint?.constant = 309
+      collectionViewHeightConstraint.constant = 0
+      collectionViewWidthConstraint.constant = 309
     } else {
       if tweet.images!.count == 1 {
-        collectionViewHeightConstraint?.constant = 150
-        collectionViewWidthConstraint?.constant = 309
+        collectionViewHeightConstraint.constant = 150
+        collectionViewWidthConstraint.constant = 309
       } else if tweet.images!.count <= 3 {
-        collectionViewHeightConstraint?.constant = 100
-        collectionViewWidthConstraint?.constant = 309
+        collectionViewHeightConstraint.constant = 100
+        collectionViewWidthConstraint.constant = 309
       } else if tweet.images!.count == 4 {
-        collectionViewHeightConstraint?.constant = 200
-        collectionViewWidthConstraint?.constant = 206
+        collectionViewHeightConstraint.constant = 200
+        collectionViewWidthConstraint.constant = 206
       } else if tweet.images!.count <= 6 {
-        collectionViewHeightConstraint?.constant = 200
-        collectionViewWidthConstraint?.constant = 309
+        collectionViewHeightConstraint.constant = 200
+        collectionViewWidthConstraint.constant = 309
       } else {
-        collectionViewHeightConstraint?.constant = 300
-        collectionViewWidthConstraint?.constant = 309
+        collectionViewHeightConstraint.constant = 300
+        collectionViewWidthConstraint.constant = 309
       }
     }
   }
@@ -106,12 +106,11 @@ class TableViewCell: UITableViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
     
-    avatarImage?.af.cancelImageRequest()
     avatarImage?.image = nil
   }
 }
 
-extension TableViewCell: UICollectionViewDataSource {
+extension TweetCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     guard let image = tweet?.images else {
       return 0
@@ -120,21 +119,21 @@ extension TableViewCell: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TweetImageCell", for: indexPath) as! TweetImageCell
     let data = tweet?.images![indexPath.row]
     cell.configure(with: data?.url ?? "")
     return cell
   }
 }
 
-extension TableViewCell: UICollectionViewDelegateFlowLayout {
+extension TweetCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     if (tweet?.images!.count)! == 1 || (tweet?.images!.count)! == 4 {
-      return CGSize(width: (self.collectionView?.bounds.size.width)! / 2 - 10, height: (self.collectionView?.bounds.size.width)! / 2 - 10)
+      return CGSize(width: (self.collectionView?.bounds.size.width)! / 2 - 10, height: (self.collectionView.bounds.size.width) / 2 - 10)
     }
     if (tweet?.images!.count)! <= 3 {
-      return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView?.bounds.size.width)! / 3 - 10)
+      return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView.bounds.size.width) / 3 - 10)
     }
-    return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView?.bounds.size.width)! / 3 - 10)
+    return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView.bounds.size.width) / 3 - 10)
   }
 }

@@ -8,27 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		38920B777AB22B501917EFD9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */; };
+		7A07FBE625C94F8F004B16F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A07FBE525C94F8F004B16F2 /* Quick.framework */; };
+		7A07FBE825C94F99004B16F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A07FBE725C94F99004B16F2 /* Nimble.framework */; };
 		7A3E103525C3FD0E00149B17 /* ImageNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */; };
 		7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103A25C4035200149B17 /* ImageCache.swift */; };
 		7A3E104325C7E68000149B17 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E104225C7E68000149B17 /* DiskCache.swift */; };
 		7A3E104725C920C700149B17 /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E104625C920C700149B17 /* MemoryCache.swift */; };
-		7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A820C6625C24D4A002215D1 /* ViewModel.swift */; };
+		7A3E106225C94B3400149B17 /* TweetsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E106125C94B3400149B17 /* TweetsViewModelTest.swift */; };
+		7A820C6725C24D4A002215D1 /* TweetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A820C6625C24D4A002215D1 /* TweetsViewModel.swift */; };
 		7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CED825BF00000052C2F3 /* AppDelegate.swift */; };
 		7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */; };
-		7AB2CEDD25BF00000052C2F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDC25BF00000052C2F3 /* ViewController.swift */; };
+		7AB2CEDD25BF00000052C2F3 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDC25BF00000052C2F3 /* TweetsViewController.swift */; };
 		7AB2CEE025BF00000052C2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDE25BF00000052C2F3 /* Main.storyboard */; };
 		7AB2CEE225BF00010052C2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEE125BF00010052C2F3 /* Assets.xcassets */; };
 		7AB2CEE525BF00010052C2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CEE325BF00010052C2F3 /* LaunchScreen.storyboard */; };
 		7AB2CEF025BF00010052C2F3 /* WeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */; };
 		7AB2CF1A25BF0CEA0052C2F3 /* TweetNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF1925BF0CEA0052C2F3 /* TweetNetworkClient.swift */; };
-		7AB2CF1E25BF0DE80052C2F3 /* UIImageViewNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */; };
+		7AB2CF1E25BF0DE80052C2F3 /* UIImageView+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF1D25BF0DE80052C2F3 /* UIImageView+Network.swift */; };
 		7AB2CF2325BF0E140052C2F3 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF2225BF0E140052C2F3 /* Tweet.swift */; };
-		7AB2CF6225BFAB5A0052C2F3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */; };
-		7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */; };
-		7AB2CF6A25BFB7070052C2F3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */; };
-		7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */; };
-		7AB2CF8725BFFCA70052C2F3 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */; };
-		7AB2CF8B25BFFE6F0052C2F3 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */; };
+		7AB2CF6225BFAB5A0052C2F3 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6125BFAB5A0052C2F3 /* TweetCell.swift */; };
+		7AB2CF6625BFB3890052C2F3 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6525BFB3890052C2F3 /* TweetCell.xib */; };
+		7AB2CF6A25BFB7070052C2F3 /* TweetImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6925BFB7070052C2F3 /* TweetImageCell.xib */; };
+		7AB2CF7025BFB86A0052C2F3 /* TweetImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF6F25BFB86A0052C2F3 /* TweetImageCell.swift */; };
+		7AB2CF8725BFFCA70052C2F3 /* TweetsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8625BFFCA70052C2F3 /* TweetsHeader.xib */; };
+		7AB2CF8B25BFFE6F0052C2F3 /* TweetsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF8A25BFFE6F0052C2F3 /* TweetsHeader.swift */; };
 		7AB2CF9125C0006A0052C2F3 /* ProfileNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */; };
 		7AB2CF9525C0008E0052C2F3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CF9425C0008E0052C2F3 /* Profile.swift */; };
 		B78CB01219B5B724EAE576B1 /* Pods_WeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA655D3823395A44119AFCCA /* Pods_WeChatTests.framework */; };
@@ -47,15 +50,18 @@
 /* Begin PBXFileReference section */
 		5E9FFB05D6BD837F7E88144B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 		6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.debug.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A07FBE525C94F8F004B16F2 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A07FBE725C94F99004B16F2 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkClient.swift; sourceTree = "<group>"; };
 		7A3E103A25C4035200149B17 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		7A3E104225C7E68000149B17 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		7A3E104625C920C700149B17 /* MemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
-		7A820C6625C24D4A002215D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7A3E106125C94B3400149B17 /* TweetsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsViewModelTest.swift; sourceTree = "<group>"; };
+		7A820C6625C24D4A002215D1 /* TweetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsViewModel.swift; sourceTree = "<group>"; };
 		7AB2CED525BF00000052C2F3 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB2CED825BF00000052C2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AB2CEDC25BF00000052C2F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AB2CEDC25BF00000052C2F3 /* TweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		7AB2CEDF25BF00000052C2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AB2CEE125BF00010052C2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AB2CEE425BF00010052C2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,14 +70,14 @@
 		7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatTests.swift; sourceTree = "<group>"; };
 		7AB2CEF125BF00010052C2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB2CF1925BF0CEA0052C2F3 /* TweetNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetNetworkClient.swift; sourceTree = "<group>"; };
-		7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewNetworking.swift; sourceTree = "<group>"; };
+		7AB2CF1D25BF0DE80052C2F3 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
 		7AB2CF2225BF0E140052C2F3 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
-		7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
+		7AB2CF6125BFAB5A0052C2F3 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		7AB2CF6525BFB3890052C2F3 /* TweetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		7AB2CF6925BFB7070052C2F3 /* TweetImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetImageCell.xib; sourceTree = "<group>"; };
+		7AB2CF6F25BFB86A0052C2F3 /* TweetImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetImageCell.swift; sourceTree = "<group>"; };
+		7AB2CF8625BFFCA70052C2F3 /* TweetsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetsHeader.xib; sourceTree = "<group>"; };
+		7AB2CF8A25BFFE6F0052C2F3 /* TweetsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsHeader.swift; sourceTree = "<group>"; };
 		7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkClient.swift; sourceTree = "<group>"; };
 		7AB2CF9425C0008E0052C2F3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7DDA5FEFF05A6E9AE8C99FBF /* Pods-WeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.release.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A07FBE825C94F99004B16F2 /* Nimble.framework in Frameworks */,
+				7A07FBE625C94F8F004B16F2 /* Quick.framework in Frameworks */,
 				B78CB01219B5B724EAE576B1 /* Pods_WeChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +132,7 @@
 		7A820C6525C24D2E002215D1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7A820C6625C24D4A002215D1 /* ViewModel.swift */,
+				7A820C6625C24D4A002215D1 /* TweetsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 		7AB2CEEE25BF00010052C2F3 /* WeChatTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A3E106125C94B3400149B17 /* TweetsViewModelTest.swift */,
 				7AB2CEEF25BF00010052C2F3 /* WeChatTests.swift */,
 				7AB2CEF125BF00010052C2F3 /* Info.plist */,
 			);
@@ -183,7 +192,7 @@
 				7AB2CF1925BF0CEA0052C2F3 /* TweetNetworkClient.swift */,
 				7AB2CF9025C0006A0052C2F3 /* ProfileNetworkClient.swift */,
 				7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */,
-				7AB2CF1D25BF0DE80052C2F3 /* UIImageViewNetworking.swift */,
+				7AB2CF1D25BF0DE80052C2F3 /* UIImageView+Network.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -200,12 +209,12 @@
 		7AB2CF2825BF0FEE0052C2F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7AB2CF6525BFB3890052C2F3 /* TableViewCell.xib */,
-				7AB2CF6125BFAB5A0052C2F3 /* TableViewCell.swift */,
-				7AB2CF6925BFB7070052C2F3 /* CollectionViewCell.xib */,
-				7AB2CF6F25BFB86A0052C2F3 /* CollectionViewCell.swift */,
-				7AB2CF8625BFFCA70052C2F3 /* TableViewHeader.xib */,
-				7AB2CF8A25BFFE6F0052C2F3 /* TableViewHeader.swift */,
+				7AB2CF6525BFB3890052C2F3 /* TweetCell.xib */,
+				7AB2CF6125BFAB5A0052C2F3 /* TweetCell.swift */,
+				7AB2CF6925BFB7070052C2F3 /* TweetImageCell.xib */,
+				7AB2CF6F25BFB86A0052C2F3 /* TweetImageCell.swift */,
+				7AB2CF8625BFFCA70052C2F3 /* TweetsHeader.xib */,
+				7AB2CF8A25BFFE6F0052C2F3 /* TweetsHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,7 +222,7 @@
 		7AB2CF8325BFEF2B0052C2F3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7AB2CEDC25BF00000052C2F3 /* ViewController.swift */,
+				7AB2CEDC25BF00000052C2F3 /* TweetsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -221,6 +230,8 @@
 		AA511B5A6E2627BBB503A0CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A07FBE725C94F99004B16F2 /* Nimble.framework */,
+				7A07FBE525C94F8F004B16F2 /* Quick.framework */,
 				9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */,
 				DA655D3823395A44119AFCCA /* Pods_WeChatTests.framework */,
 			);
@@ -257,6 +268,7 @@
 				7AB2CEE725BF00010052C2F3 /* Sources */,
 				7AB2CEE825BF00010052C2F3 /* Frameworks */,
 				7AB2CEE925BF00010052C2F3 /* Resources */,
+				D7FB28445B6EBFF59BE58849 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,11 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB2CEE525BF00010052C2F3 /* LaunchScreen.storyboard in Resources */,
-				7AB2CF8725BFFCA70052C2F3 /* TableViewHeader.xib in Resources */,
-				7AB2CF6625BFB3890052C2F3 /* TableViewCell.xib in Resources */,
+				7AB2CF8725BFFCA70052C2F3 /* TweetsHeader.xib in Resources */,
+				7AB2CF6625BFB3890052C2F3 /* TweetCell.xib in Resources */,
 				7AB2CEE225BF00010052C2F3 /* Assets.xcassets in Resources */,
 				7AB2CEE025BF00000052C2F3 /* Main.storyboard in Resources */,
-				7AB2CF6A25BFB7070052C2F3 /* CollectionViewCell.xib in Resources */,
+				7AB2CF6A25BFB7070052C2F3 /* TweetImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D7FB28445B6EBFF59BE58849 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChatTests/Pods-WeChatTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChatTests/Pods-WeChatTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeChatTests/Pods-WeChatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F18C38B964150D145156E0C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,19 +426,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AB2CF8B25BFFE6F0052C2F3 /* TableViewHeader.swift in Sources */,
+				7AB2CF8B25BFFE6F0052C2F3 /* TweetsHeader.swift in Sources */,
 				7AB2CF9125C0006A0052C2F3 /* ProfileNetworkClient.swift in Sources */,
 				7A3E103525C3FD0E00149B17 /* ImageNetworkClient.swift in Sources */,
-				7AB2CEDD25BF00000052C2F3 /* ViewController.swift in Sources */,
+				7AB2CEDD25BF00000052C2F3 /* TweetsViewController.swift in Sources */,
 				7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */,
-				7AB2CF7025BFB86A0052C2F3 /* CollectionViewCell.swift in Sources */,
-				7AB2CF1E25BF0DE80052C2F3 /* UIImageViewNetworking.swift in Sources */,
+				7AB2CF7025BFB86A0052C2F3 /* TweetImageCell.swift in Sources */,
+				7AB2CF1E25BF0DE80052C2F3 /* UIImageView+Network.swift in Sources */,
 				7AB2CF2325BF0E140052C2F3 /* Tweet.swift in Sources */,
 				7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */,
 				7A3E104725C920C700149B17 /* MemoryCache.swift in Sources */,
 				7AB2CF9525C0008E0052C2F3 /* Profile.swift in Sources */,
-				7AB2CF6225BFAB5A0052C2F3 /* TableViewCell.swift in Sources */,
-				7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */,
+				7AB2CF6225BFAB5A0052C2F3 /* TweetCell.swift in Sources */,
+				7A820C6725C24D4A002215D1 /* TweetsViewModel.swift in Sources */,
 				7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */,
 				7AB2CF1A25BF0CEA0052C2F3 /* TweetNetworkClient.swift in Sources */,
 				7A3E104325C7E68000149B17 /* DiskCache.swift in Sources */,
@@ -420,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3E106225C94B3400149B17 /* TweetsViewModelTest.swift in Sources */,
 				7AB2CEF025BF00010052C2F3 /* WeChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

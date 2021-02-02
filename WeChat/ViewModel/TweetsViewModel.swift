@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class ViewModel {
-  var tweetDatas: [Tweet]?
-  var tableViewDatas = [Tweet]()
-  var originalDatas: [Tweet]?
+class TweetsViewModel {
+  var tweetDatas: [Tweet] = []
+  var originalDatas: [Tweet] = []
+  var tableViewDatas: [Tweet] = []
   var profile: Profile?
   
   private let tweetNetworkClient: TweetNetworkClient = .init()
@@ -19,8 +19,11 @@ class ViewModel {
   
   func getTweetDatas(completion: @escaping () -> Void) {
     tweetNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/moments.json")!){ json, _ in
-      self.tweetDatas = json as? [Tweet]
-      self.tweetDatas = self.tweetDatas?.filter( { $0.images != nil || $0.content != nil } )
+      guard let tweets = json as? [Tweet] else {
+        return
+      }
+      self.tweetDatas = tweets
+      self.tweetDatas = self.tweetDatas.filter( { $0.images != nil || $0.content != nil } )
       self.originalDatas = self.tweetDatas
       self.getTableViewDataSource()
       completion()
@@ -40,19 +43,17 @@ class ViewModel {
   }
   
   func getTableViewDataSource() {
-    if tweetDatas?.count ?? 0 / 5 > 0 {
+    if tweetDatas.count / 5 > 0 {
       for var i in 0..<5 {
         i += 1
-        tableViewDatas.append(tweetDatas?.first ?? Tweet())
-        tweetDatas?.removeFirst()
+        tableViewDatas.append(tweetDatas[0])
+        tweetDatas.removeFirst()
       }
-    } else if tweetDatas?.count ?? 0 / 5 == 0 {
-      if let datas = tweetDatas {
-        for data in datas {
-          tableViewDatas.append(data)
-        }
-        tweetDatas = []
+    } else if tweetDatas.count / 5 == 0 {
+      for data in tweetDatas {
+        tableViewDatas.append(data)
       }
+      tweetDatas = []
     }
   }
 }

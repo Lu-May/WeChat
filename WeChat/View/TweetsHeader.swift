@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewHeader: UITableViewHeaderFooterView {
+class TweetsHeader: UITableViewHeaderFooterView {
   @IBOutlet weak var profile_image: UIImageView?
   @IBOutlet weak var avatar: UIImageView?
   @IBOutlet weak var nick: UILabel?

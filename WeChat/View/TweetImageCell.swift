@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class CollectionViewCell: UICollectionViewCell {
+class TweetImageCell: UICollectionViewCell {
   @IBOutlet weak var image:UIImageView!
   let imageCache = ImageCache()
   

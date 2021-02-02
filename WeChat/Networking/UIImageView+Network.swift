@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 extension UIImageView {
   func setImage(withURL url: String) {

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TweetsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   private let refreshControl = UIRefreshControl()
-  let viewModel = ViewModel()
+  let viewModel = TweetsViewModel()
   let indicator = UIActivityIndicatorView()
   let tableFooterView = UITableViewHeaderFooterView()
   let lable = UILabel()
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     let view = UIView()
-    let header = Bundle.main.loadNibNamed("TableViewHeader", owner: nil, options: nil)?.first as! TableViewHeader
+    let header = Bundle.main.loadNibNamed("TweetsHeader", owner: nil, options: nil)?.first as! TweetsHeader
     view.addSubview(header)
     
     setTableViewHeaderConstraint(header, view)
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     tableView?.tableFooterView = tableFooterView
     tableView?.tableHeaderView = view
-    tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+    tableView?.register(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
     tableView?.dataSource = self
     tableView?.delegate = self
     tableView?.estimatedRowHeight = UITableView.automaticDimension
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     }
   }
   
-  fileprivate func setTableViewHeaderConstraint(_ header: TableViewHeader, _ view: UIView) {
+  fileprivate func setTableViewHeaderConstraint(_ header: TweetsHeader, _ view: UIView) {
     header.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       header.topAnchor.constraint(equalTo: view.topAnchor),
@@ -103,13 +103,13 @@ class ViewController: UIViewController {
   }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.tableViewDatas.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as? TweetCell else {
       return UITableViewCell()
     }
     cell.configure(with: viewModel.tableViewDatas[indexPath.row])
@@ -125,7 +125,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
       
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
         self.indicator.hidesWhenStopped = true
-        if self.viewModel.tweetDatas?.count == 0 {
+        if self.viewModel.tweetDatas.count == 0 {
           self.lable.text = "数据加载完毕"
           self.indicator.removeFromSuperview()
         }
