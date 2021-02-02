@@ -10,6 +10,7 @@
 		38920B777AB22B501917EFD9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF2873FB2045FC508FC277 /* Pods_WeChat.framework */; };
 		7A3E103525C3FD0E00149B17 /* ImageNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */; };
 		7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E103A25C4035200149B17 /* ImageCache.swift */; };
+		7A3E104325C7E68000149B17 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E104225C7E68000149B17 /* DiskCache.swift */; };
 		7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A820C6625C24D4A002215D1 /* ViewModel.swift */; };
 		7AB2CED925BF00000052C2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CED825BF00000052C2F3 /* AppDelegate.swift */; };
 		7AB2CEDB25BF00000052C2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2CEDA25BF00000052C2F3 /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 		6AFA1719F1C21A97060C4195 /* Pods-WeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatTests.debug.xcconfig"; path = "Target Support Files/Pods-WeChatTests/Pods-WeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A3E103425C3FD0E00149B17 /* ImageNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkClient.swift; sourceTree = "<group>"; };
 		7A3E103A25C4035200149B17 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		7A3E104225C7E68000149B17 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		7A820C6625C24D4A002215D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7AB2CED525BF00000052C2F3 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB2CED825BF00000052C2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				7A820C6625C24D4A002215D1 /* ViewModel.swift */,
 				7A3E103A25C4035200149B17 /* ImageCache.swift */,
+				7A3E104225C7E68000149B17 /* DiskCache.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				7A820C6725C24D4A002215D1 /* ViewModel.swift in Sources */,
 				7A3E103B25C4035200149B17 /* ImageCache.swift in Sources */,
 				7AB2CF1A25BF0CEA0052C2F3 /* TweetNetworkClient.swift in Sources */,
+				7A3E104325C7E68000149B17 /* DiskCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

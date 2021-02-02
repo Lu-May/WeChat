@@ -18,14 +18,8 @@ class TableViewHeader: UITableViewHeaderFooterView {
   }
   
   func configure(with profile: Profile) {
-    
-    ImageCache.shared.getImageFromCache(profile.profileImage) { [weak self] image, _ in
-      self?.profile_image?.image = image
-    }
-    
-    ImageCache.shared.getImageFromCache(profile.avatar) { [weak self] image, _ in
-      self?.avatar?.image = image
-    }
+    profile_image?.setImage(withURL: profile.profileImage)
+    avatar?.setImage(withURL: profile.avatar)
     nick?.font = UIFont(name: "Helvetica-Bold", size: 18)
     nick?.text = profile.nick
   }

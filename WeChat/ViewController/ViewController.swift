@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
     
     setFooterLable()
-    
     tableView.refreshControl = refreshControl
     refreshControl.addTarget(self, action: #selector(refreshTableViewData(_:)), for: .valueChanged)
     
@@ -42,8 +41,8 @@ class ViewController: UIViewController {
     viewModel.getProfiles() { [ weak self ] in
       if let profile = self?.viewModel.profile {
         header.configure(with: profile)
-        self?.tableView.reloadData()
       }
+      self?.tableView.reloadData()
     }
     
     tableView?.tableFooterView = tableFooterView
@@ -113,7 +112,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else {
       return UITableViewCell()
     }
-    cell.configure(with: viewModel.tableViewDatas[indexPath.row] )
+    cell.configure(with: viewModel.tableViewDatas[indexPath.row])
     return cell
   }
   

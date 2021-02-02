@@ -27,10 +27,8 @@ class TableViewCell: UITableViewCell {
     usernameLable.text = tweet.sender?.nick ?? ""
     contentLable.text = tweet.content ?? ""
     
-    if tweet.sender?.avatar != nil {
-      ImageCache.shared.getImageFromCache(tweet.sender?.avatar ?? "") { [weak self] image, _ in
-        self?.avatarImage.image = image
-      }
+    if let avatar = tweet.sender?.avatar {
+      avatarImage.setImage(withURL: avatar)
     }
     myString = ""
     setCommentsLableText(tweet)
@@ -41,6 +39,7 @@ class TableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    avatarImage.image = nil
     
     self.collectionView?.delegate =  self
     self.collectionView?.dataSource =  self

@@ -17,9 +17,7 @@ class CollectionViewCell: UICollectionViewCell {
   }
   
   func configure(with img: String) {
-    ImageCache.shared.getImageFromCache(img) { [weak self] img, _ in
-      self?.image.image = img
-    }
+    image.setImage(withURL: img)
   }
   
   override func prepareForReuse() {

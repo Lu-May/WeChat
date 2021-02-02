@@ -14,14 +14,18 @@ class ImageCache {
   
   private let imageNetworkClient: ImageNetworkClient = .init()
   
-  func getImageFromCache(_ url: String, completion: @escaping (UIImage?, Error?) -> Void) {
+  func getImageFromCache(_ url: String, completion: @escaping (UIImage?) -> Void) {
     if let image = cache.object(forKey: url as NSString) {
-      completion(image, nil)
+      completion(image)
+    } else if let image = DiskCache.shared.searchImageInDiskCache(url) {
+      self.insertImageIntoCache(url, image)
+      completion(image)
     } else {
-      imageNetworkClient.request(url: URL(string: url)!) { data, _ in
-        self.insertImageIntoCache(url, data as! UIImage)
+      imageNetworkClient.request(url: URL(string: url)!) { data in
+        self.insertImageIntoCache(url, data ?? UIImage())
+        DiskCache.shared.saveImageDocumentDirectory(url, data: data ?? UIImage())
         DispatchQueue.main.async {
-          completion(data as? UIImage, nil)
+          completion(data)
         }
       }
     }

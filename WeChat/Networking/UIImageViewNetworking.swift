@@ -9,8 +9,10 @@ import UIKit
 import AlamofireImage
 
 extension UIImageView {
-  func setImage(withURL url: URL) {
-    self.af.setImage(withURL: url)
+  func setImage(withURL url: String) {
+    ImageCache.shared.getImageFromCache(url) { image in
+      self.image = image
+    }
   }
 }
 
