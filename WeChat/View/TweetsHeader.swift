@@ -8,9 +8,9 @@
 import UIKit
 
 class TweetsHeader: UITableViewHeaderFooterView {
-  @IBOutlet weak var profile_image: UIImageView?
-  @IBOutlet weak var avatar: UIImageView?
-  @IBOutlet weak var nick: UILabel?
+  @IBOutlet weak var profileImage: UIImageView!
+  @IBOutlet weak var avatar: UIImageView!
+  @IBOutlet weak var nick: UILabel!
   
   let imageCache = ImageCache()
   override class func awakeFromNib() {
@@ -18,9 +18,9 @@ class TweetsHeader: UITableViewHeaderFooterView {
   }
   
   func configure(with profile: Profile) {
-    profile_image?.setImage(withURL: profile.profileImage)
-    avatar?.setImage(withURL: profile.avatar)
-    nick?.font = UIFont(name: "Helvetica-Bold", size: 18)
-    nick?.text = profile.nick
+    profileImage.setImage(withURL: profile.profileImage)
+    avatar.setImage(withURL: profile.avatar)
+    nick.font = UIFont(name: "Helvetica-Bold", size: 18)
+    nick.text = profile.nick
   }
 }

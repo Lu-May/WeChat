@@ -9,19 +9,19 @@ import UIKit
 
 class TweetsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
-  
+  private var tableHeaderView = TweetsHeader()
   private let refreshControl = UIRefreshControl()
   let viewModel = TweetsViewModel()
   let indicator = UIActivityIndicatorView()
   let tableFooterView = UITableViewHeaderFooterView()
-  let lable = UILabel()
+  let footerLabel = UILabel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "朋友圈"
     setIndicatorConstraint()
     
-    setFooterLable(tableFooterView: tableFooterView)
+    setFooterLabel(tableFooterView: tableFooterView)
     tableView.refreshControl = refreshControl
     refreshControl.addTarget(self, action: #selector(refreshTableViewData(_:)), for: .valueChanged)
     
@@ -29,22 +29,20 @@ class TweetsViewController: UIViewController {
       self?.tableView.reloadData()
     }
     
-    let view = UIView()
-    let header = setUpTableViewHeader(view: view)
+    setUpTableViewHeader()
     
     viewModel.getProfiles() { [ weak self ] in
       if let profile = self?.viewModel.profile {
-        header.configure(with: profile)
+        self?.tableHeaderView.configure(with: profile)
       }
       self?.tableView.reloadData()
     }
     
-    tableView?.tableFooterView = tableFooterView
-    tableView?.tableHeaderView = view
-    tableView?.register(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
-    tableView?.dataSource = self
-    tableView?.delegate = self
-    tableView?.estimatedRowHeight = UITableView.automaticDimension
+    tableView.tableFooterView = tableFooterView
+    tableView.register(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.estimatedRowHeight = UITableView.automaticDimension
   }
   
   @objc private func refreshTableViewData(_ sender: Any) {
@@ -52,28 +50,28 @@ class TweetsViewController: UIViewController {
       self.viewModel.initDatas()
       self.viewModel.getTableViewDataSource()
       self.tableView.reloadData()
-      self.lable.text = "上拉加载数据"
       self.setIndicatorConstraint()
       
       self.refreshControl.endRefreshing()
     }
   }
   
-  fileprivate func setUpTableViewHeader(view: UIView) -> TweetsHeader {
-    let header = Bundle.main.loadNibNamed("TweetsHeader", owner: nil, options: nil)?.first as! TweetsHeader
-    view.addSubview(header)
+  private func setUpTableViewHeader() {
+    let view = UIView()
+    tableHeaderView = Bundle.main.loadNibNamed("TweetsHeader", owner: nil, options: nil)?.first as! TweetsHeader
+    view.addSubview(tableHeaderView)
     view.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 322)
-    header.translatesAutoresizingMaskIntoConstraints = false
+    tableHeaderView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      header.topAnchor.constraint(equalTo: view.topAnchor),
-      header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      header.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      tableHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
+      tableHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      tableHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      tableHeaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
-    return header
+    tableView.tableHeaderView = view
   }
   
-  fileprivate func setIndicatorConstraint() {
+  private func setIndicatorConstraint() {
     tableFooterView.addSubview(indicator)
     indicator.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
@@ -85,19 +83,19 @@ class TweetsViewController: UIViewController {
     indicator.center = tableFooterView.center
   }
   
-  fileprivate func setFooterLable(tableFooterView: UITableViewHeaderFooterView) {
+  private func setFooterLabel(tableFooterView: UITableViewHeaderFooterView) {
     tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
-    lable.font = lable.font.withSize(12)
-    lable.textColor = UIColor.lightGray
-    lable.text = "上拉加载数据"
-    lable.textAlignment = .center
-    self.tableFooterView.addSubview(lable)
-    lable.translatesAutoresizingMaskIntoConstraints = false
+    footerLabel.font = footerLabel.font.withSize(12)
+    footerLabel.textColor = UIColor.lightGray
+    footerLabel.text = "上拉加载数据"
+    footerLabel.textAlignment = .center
+    self.tableFooterView.addSubview(footerLabel)
+    footerLabel.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      lable.topAnchor.constraint(equalTo: self.tableFooterView.topAnchor),
-      lable.trailingAnchor.constraint(equalTo: self.tableFooterView.trailingAnchor),
-      lable.leadingAnchor.constraint(equalTo: self.tableFooterView.leadingAnchor),
-      lable.bottomAnchor.constraint(equalTo: self.tableFooterView.bottomAnchor)
+      footerLabel.topAnchor.constraint(equalTo: self.tableFooterView.topAnchor),
+      footerLabel.trailingAnchor.constraint(equalTo: self.tableFooterView.trailingAnchor),
+      footerLabel.leadingAnchor.constraint(equalTo: self.tableFooterView.leadingAnchor),
+      footerLabel.bottomAnchor.constraint(equalTo: self.tableFooterView.bottomAnchor)
     ])
   }
 }
@@ -125,7 +123,7 @@ extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
         self.indicator.hidesWhenStopped = true
         if self.viewModel.tweetDatas.count == 0 {
-          self.lable.text = "数据加载完毕"
+          self.footerLabel.text = "数据加载完毕"
           self.indicator.removeFromSuperview()
         }
         self.viewModel.getTableViewDataSource()

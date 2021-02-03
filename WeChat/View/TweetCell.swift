@@ -10,10 +10,10 @@ import AlamofireImage
 
 class TweetCell: UITableViewCell {
   @IBOutlet weak var avatarImage: UIImageView!
-  @IBOutlet weak var usernameLable: UILabel!
-  @IBOutlet weak var contentLable: UILabel!
+  @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var contentLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var commentsLable: UILabel!
+  @IBOutlet weak var commentsLabel: UILabel!
   
   var tweet: Tweet?
   
@@ -22,16 +22,16 @@ class TweetCell: UITableViewCell {
   var myString = ""
   
   func configure(with tweet: Tweet) {
-    commentsLable.text = ""
+    commentsLabel.text = ""
     self.tweet = tweet
-    usernameLable.text = tweet.sender?.nick ?? ""
-    contentLable.text = tweet.content ?? ""
+    usernameLabel.text = tweet.sender?.nick ?? ""
+    contentLabel.text = tweet.content ?? ""
     
     if let avatar = tweet.sender?.avatar {
       avatarImage.setImage(withURL: avatar)
     }
     myString = ""
-    setCommentsLableText(tweet)
+    setCommentsLabelText(tweet)
     setCollectionViewHeightAndWidthConstraint(tweet)
     
     collectionView.reloadData()
@@ -73,7 +73,7 @@ class TweetCell: UITableViewCell {
       }
     }
   }
-  fileprivate func setCommentsLableText(_ tweet: Tweet) {
+  fileprivate func setCommentsLabelText(_ tweet: Tweet) {
     var commentsCount = tweet.comments?.count
     let strings = NSMutableAttributedString(string: "")
     if let comments = tweet.comments {
@@ -87,7 +87,7 @@ class TweetCell: UITableViewCell {
           let attrString = NSAttributedString(string: ": \(comment.content ?? "")")
           myAttrString.append(attrString)
           strings.append(myAttrString)
-          commentsLable.attributedText = strings
+          commentsLabel.attributedText = strings
           
         } else {
           let myString = comment.sender?.nick ?? ""
@@ -97,7 +97,7 @@ class TweetCell: UITableViewCell {
           let attrString = NSAttributedString(string: ": \(comment.content ?? "")\n")
           myAttrString.append(attrString)
           strings.append(myAttrString)
-          commentsLable.attributedText = strings
+          commentsLabel.attributedText = strings
         }
       }
     }
