@@ -20,9 +20,8 @@ class TweetsViewController: UIViewController {
     super.viewDidLoad()
     self.title = "朋友圈"
     setIndicatorConstraint()
-    tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
     
-    setFooterLable()
+    setFooterLable(tableFooterView: tableFooterView)
     tableView.refreshControl = refreshControl
     refreshControl.addTarget(self, action: #selector(refreshTableViewData(_:)), for: .valueChanged)
     
@@ -31,12 +30,7 @@ class TweetsViewController: UIViewController {
     }
     
     let view = UIView()
-    let header = Bundle.main.loadNibNamed("TweetsHeader", owner: nil, options: nil)?.first as! TweetsHeader
-    view.addSubview(header)
-    
-    setTableViewHeaderConstraint(header, view)
-    
-    view.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 322)
+    let header = setUpTableViewHeader(view: view)
     
     viewModel.getProfiles() { [ weak self ] in
       if let profile = self?.viewModel.profile {
@@ -65,7 +59,10 @@ class TweetsViewController: UIViewController {
     }
   }
   
-  fileprivate func setTableViewHeaderConstraint(_ header: TweetsHeader, _ view: UIView) {
+  fileprivate func setUpTableViewHeader(view: UIView) -> TweetsHeader {
+    let header = Bundle.main.loadNibNamed("TweetsHeader", owner: nil, options: nil)?.first as! TweetsHeader
+    view.addSubview(header)
+    view.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 322)
     header.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       header.topAnchor.constraint(equalTo: view.topAnchor),
@@ -73,6 +70,7 @@ class TweetsViewController: UIViewController {
       header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       header.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+    return header
   }
   
   fileprivate func setIndicatorConstraint() {
@@ -87,7 +85,8 @@ class TweetsViewController: UIViewController {
     indicator.center = tableFooterView.center
   }
   
-  fileprivate func setFooterLable() {
+  fileprivate func setFooterLable(tableFooterView: UITableViewHeaderFooterView) {
+    tableFooterView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50)
     lable.font = lable.font.withSize(12)
     lable.textColor = UIColor.lightGray
     lable.text = "上拉加载数据"
