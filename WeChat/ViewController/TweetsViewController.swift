@@ -51,7 +51,6 @@ class TweetsViewController: UIViewController {
       self.viewModel.getTableViewDataSource()
       self.tableView.reloadData()
       self.setIndicatorConstraint()
-      
       self.refreshControl.endRefreshing()
     }
   }

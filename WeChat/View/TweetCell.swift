@@ -50,30 +50,35 @@ class TweetCell: UITableViewCell {
     collectionViewWidthConstraint.isActive = true
   }
   
-  fileprivate func setCollectionViewHeightAndWidthConstraint(_ tweet: Tweet) {
+  private func setCollectionViewHeightAndWidthConstraint(_ tweet: Tweet) {
     if tweet.images == nil || tweet.images?.count == 0 {
       collectionViewHeightConstraint.constant = 0
       collectionViewWidthConstraint.constant = 309
     } else {
-      if tweet.images!.count == 1 {
-        collectionViewHeightConstraint.constant = 150
-        collectionViewWidthConstraint.constant = 309
-      } else if tweet.images!.count <= 3 {
-        collectionViewHeightConstraint.constant = 100
-        collectionViewWidthConstraint.constant = 309
-      } else if tweet.images!.count == 4 {
-        collectionViewHeightConstraint.constant = 200
-        collectionViewWidthConstraint.constant = 206
-      } else if tweet.images!.count <= 6 {
-        collectionViewHeightConstraint.constant = 200
-        collectionViewWidthConstraint.constant = 309
-      } else {
-        collectionViewHeightConstraint.constant = 300
-        collectionViewWidthConstraint.constant = 309
-      }
+      self.setUpCollectionViewConstraint(count: (tweet.images?.count)!)
+  }
+  }
+  
+  private func setUpCollectionViewConstraint(count: Int) {
+    if count == 1 {
+      collectionViewHeightConstraint.constant = 150
+      collectionViewWidthConstraint.constant = 309
+    } else if count <= 3 {
+      collectionViewHeightConstraint.constant = 100
+      collectionViewWidthConstraint.constant = 309
+    } else if count == 4 {
+      collectionViewHeightConstraint.constant = 200
+      collectionViewWidthConstraint.constant = 206
+    } else if count <= 6 {
+      collectionViewHeightConstraint.constant = 200
+      collectionViewWidthConstraint.constant = 309
+    } else {
+      collectionViewHeightConstraint.constant = 300
+      collectionViewWidthConstraint.constant = 309
     }
   }
-  fileprivate func setCommentsLabelText(_ tweet: Tweet) {
+  
+  private func setCommentsLabelText(_ tweet: Tweet) {
     var commentsCount = tweet.comments?.count
     let strings = NSMutableAttributedString(string: "")
     if let comments = tweet.comments {
@@ -130,9 +135,6 @@ extension TweetCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     if (tweet?.images!.count)! == 1 || (tweet?.images!.count)! == 4 {
       return CGSize(width: (self.collectionView?.bounds.size.width)! / 2 - 10, height: (self.collectionView.bounds.size.width) / 2 - 10)
-    }
-    if (tweet?.images!.count)! <= 3 {
-      return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView.bounds.size.width) / 3 - 10)
     }
     return CGSize(width: (self.collectionView?.bounds.size.width)! / 3 - 10, height: (self.collectionView.bounds.size.width) / 3 - 10)
   }
