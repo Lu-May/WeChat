@@ -18,7 +18,7 @@ class TweetsViewModel {
   private let profileNetworkClient: ProfileNetworkClient = .init()
   
   func getTweetDatas(completion: @escaping () -> Void) {
-    tweetNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/moments.json")!){ json, _ in
+    tweetNetworkClient.request(url: URL(string: BaseUrl.baseUrl + "moments.json")!){ json, _ in//URL，网络请求通用化
       guard let tweets = json as? [Tweet] else {
         return
       }
@@ -31,7 +31,7 @@ class TweetsViewModel {
   }
   
   func getProfiles(completion: @escaping () -> Void) {
-    profileNetworkClient.request(url: URL(string: "https://emagrorrim.github.io/mock-api/user/jsmith.json")!) { json, _ in
+    profileNetworkClient.request(url: URL(string: BaseUrl.baseUrl + "user/jsmith.json")!) { json, _ in
       self.profile = json as? Profile
       completion()
     }

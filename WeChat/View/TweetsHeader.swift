@@ -11,12 +11,7 @@ class TweetsHeader: UITableViewHeaderFooterView {
   @IBOutlet weak var profileImage: UIImageView!
   @IBOutlet weak var avatar: UIImageView!
   @IBOutlet weak var nick: UILabel!
-  
-  let imageCache = ImageCache()
-  override class func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
+    
   func configure(with profile: Profile) {
     profileImage.setImage(withURL: profile.profileImage)
     avatar.setImage(withURL: profile.avatar)

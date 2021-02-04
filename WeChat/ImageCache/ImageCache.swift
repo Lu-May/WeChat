@@ -14,7 +14,7 @@ class ImageCache {
   private let imageNetworkClient: ImageNetworkClient = .init()
   
   func getImageFromCache(_ url: String, completion: @escaping (UIImage) -> Void) {
-    if let image = MemoryCache.shared.getImage(url: url) {
+    if let image = MemoryCache.shared.getImage(url: url) {//哈希算法 尽量不可读
       completion(image)
     } else if let image = DiskCache.shared.getImage(url: url) {
       MemoryCache.shared.saveImage(url: url, image: image)

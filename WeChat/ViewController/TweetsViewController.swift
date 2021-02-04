@@ -52,6 +52,7 @@ class TweetsViewController: UIViewController {
       self.tableView.reloadData()
       self.setIndicatorConstraint()
       self.refreshControl.endRefreshing()
+      self.footerLabel.text = "上拉加载数据"
     }
   }
   
@@ -112,14 +113,14 @@ extension TweetsViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
   
-  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let currentOffset = tableView.contentOffset.y
     let maximumOffset = tableView.contentSize.height - tableView.frame.size.height
     
     if maximumOffset - currentOffset <= 10.0 {
       self.indicator.startAnimating()
       
-      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
         self.indicator.hidesWhenStopped = true
         if self.viewModel.tweetDatas.count == 0 {
           self.footerLabel.text = "数据加载完毕"
